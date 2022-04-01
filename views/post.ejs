@@ -1,14 +1,30 @@
 <%- include('lout/head') %>
-<%- include('lout/nav') %>
-<div class="container">
-    <% var a=1 %>
-    <br>
-    <br>
-    <h3 class="white_text"><%= data['t'] %></h3>
-    <h5 class="white_text"><%= data['b'] %></h5>
-    <hr>
-    <h5><pre class="bb white_text"><p><%= data['m'] %></p></pre></h5>
-    <a href="<%= data['u'] %>">site link</a>
-</div>
-<%- include('lout/jss') %>
-<!---->
+    <%- include('lout/nav') %>
+        <div class="container">
+            <% var a=1 %>
+                <br>
+                <br>
+                <h3 class="white_text">
+                    <%= data['t'] %>
+                </h3>
+                <h5 class="white_text">
+                    <%= data['b'] %>
+                </h5>
+                <br>
+                <link rel="stylesheet" href="https://pandao.github.io/editor.md/css/editormd.preview.css" />
+                <div id="test-markdown-view">
+                    <!-- Server-side output Markdown text -->
+                    <textarea style="display:none;"></textarea>
+                </div>
+                <script type="text/javascript">
+                    $(function () {
+                        var testView = editormd.markdownToHTML("test-markdown-view", {
+                            markdown : `[TOC]\n<%= data['m'] %>`, // Also, you can dynamic set Markdown text
+                            htmlDecode : true,  // Enable / disable HTML tag encode.
+                            // htmlDecode : "style,script,iframe",  // Note: If enabled, you should filter some dangerous HTML tags for website security.
+                        });
+                    });
+                </script>
+                <a href="<%= data['u'] %>">site link</a>
+        </div>
+        <%- include('lout/jss') %><!---->

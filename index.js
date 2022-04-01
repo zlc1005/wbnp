@@ -7,7 +7,7 @@ const bodyParser = require("body-parser");
 const bp = require('./models/m')
 const express = require('express')
 const app = express()
-const port = process.env.PORT || 80
+const port = process.env.PORT || 8080
 
 var css = `
 .bb {
@@ -88,7 +88,9 @@ app.post('/post', (req, res) => {
     }
     console.log(req.body.urls);
     ppp = req.body.moreinfo
-    ppp = ppp.replace(/\r\n/g, '\n')
+    while (ppp.includes('`')) {
+        ppp = ppp.replace("`", '\\`')
+    }
     pwd = req.body.pwd
     if (pwd != NEWS_PAPER_ADMIN_PASSW) { res.redirect('/404'); return; }
     bp.post.create({ t: req.body.title, b: req.body.textbody, u: url, m: ppp }, (err, blpo) => { console.log(err, blpo) })
@@ -112,4 +114,4 @@ app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 });
 
-Infinity; Infinity; Infinity; Infinity; Infinity; Infinity; Infinity; Infinity;
+Infinity; Infinity; Infinity; Infinity; Infinity; Infinity; Infinity; Infinity;// f

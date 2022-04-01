@@ -1,29 +1,29 @@
 <%- include('lout/head') %>
-  <%- include('lout/nav') %>
-    <div class="container">
-      <form action="/post" method="POST">
-        <label class="col-sm-2 col-form-label white_text">title</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="staticEmail" name="title">
-        </div>
-        <label class="col-sm-2 col-form-label white_text">body</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="staticEmail" name="textbody">
-        </div>
-        <label class="col-sm-2 col-form-label white_text">url</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="staticEmail" name="urls">
-        </div>
-        <label class="col-sm-2 col-form-label white_text">paragraph</label>
-        <div class="col-sm-10">
-          <textarea class="form-control" id="" rows="3" name="moreinfo"></textarea>
-        </div>
-        <label class="col-sm-2 col-form-label white_text">admin password</label>
-        <div class="col-sm-10">
-          <input class="form-control" id="" type="password" name="pwd"></input>
-        </div>
-        <input class="btn btn-primary" type="submit" value="submit" />
-      </form>
+<%- include('lout/nav') %>
+<div class="container">
+  <form action="/post" method="POST">
+    <label class="col-sm-2 col-form-label white_text">title</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="staticEmail" name="title">
     </div>
+    <label class="col-sm-2 col-form-label white_text">body</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="staticEmail" name="textbody">
+    </div>
+    <label class="col-sm-2 col-form-label white_text">url</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="staticEmail" name="urls">
+    </div>
+    <label class="col-sm-2 col-form-label white_text">paragraph</label>
+    <div id="test-editor">
+      <textarea style="display:none;" name="moreinfo"></textarea>
+    </div>
+    <%- include('lout/mdejs') %>
+    <label class="col-sm-2 col-form-label white_text">admin password</label>
+    <div class="col-sm-10">
+      <input class="form-control" id="" type="password" name="pwd"></input>
+    </div>
+    <input class="btn btn-primary" type="submit" value="submit" />
+  </form>
+</div>
 <%- include('lout/jss') %>
-<!-- aaaa -->

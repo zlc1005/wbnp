@@ -1,0 +1,38 @@
+<%- include('lout/head') %>
+  <%- include('lout/nav') %>
+    <div class="container">
+      <br>
+      <br>
+      <div id="posts">
+        <% for (let i=0;i<data.length;i++) {%>
+          <div class="card" style="width: 18rem;" class="">
+            <div class="card-body">
+              <h5 class="card-title">
+                <%= data[i]['t'] %>
+              </h5>
+              <p class="card-text">
+                <%= data[i]['b'] %>
+              </p>
+              <a href="<%= data[i]['u'] %>" class="card-link">link</a>
+              <a href="/post/<%= data[i]['_id'] %>" class="card-link">more</a>
+            </div>
+          </div>
+          <h1 class="hide">
+            <h1 class="hide">
+              <h1 class="hide">
+                <h1 class="hide">
+                  <h1 class="hide">
+                    <h1 class="hide">
+                      <h1 class="hide">
+                        <h1 class="hide">老板死了</h1>
+                      </h1>
+                    </h1>
+                  </h1>
+                </h1>
+              </h1>
+            </h1>
+          </h1>
+          <% } %>
+      </div>
+    </div>
+    <%- include('lout/jss') %>
